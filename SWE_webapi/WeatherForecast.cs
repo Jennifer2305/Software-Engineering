@@ -10,3 +10,21 @@ public class WeatherForecast
 
     public string? Summary { get; set; }
 }
+
+public class Books
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public Author Author { get; set; }
+
+}
+
+public class Author
+{
+    public int Id { get; set; }
+    public string Name { set; get; }
+    public List<Books> Books { get; set; }
+
+
+}
