@@ -5,6 +5,10 @@ C:\Software-Engineering\SWE_webapi\bin\Debug\net6.0\SWE_webapi.deps.json
 C:\Software-Engineering\SWE_webapi\bin\Debug\net6.0\SWE_webapi.runtimeconfig.json
 C:\Software-Engineering\SWE_webapi\bin\Debug\net6.0\SWE_webapi.dll
 C:\Software-Engineering\SWE_webapi\bin\Debug\net6.0\SWE_webapi.pdb
+C:\Software-Engineering\SWE_webapi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Software-Engineering\SWE_webapi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Software-Engineering\SWE_webapi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Software-Engineering\SWE_webapi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Software-Engineering\SWE_webapi\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Software-Engineering\SWE_webapi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Software-Engineering\SWE_webapi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
