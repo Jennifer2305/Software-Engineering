@@ -88,16 +88,16 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.InMemory/1.0.0": {
+      "Microsoft.EntityFrameworkCore.InMemory/6.0.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "1.0.0"
+          "Microsoft.EntityFrameworkCore": "6.0.3"
         },
         "compile": {
-          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
@@ -453,18 +453,17 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.InMemory/1.0.0": {
-      "sha512": "0HGcrblJnPlW9EHLFKZ4uSFXOVbvtIymPNsbD+PoAm2B12oe8ImTgWHAgeYbCDLWHyETyN3D1sn8sqkqbo+uog==",
+    "Microsoft.EntityFrameworkCore.InMemory/6.0.3": {
+      "sha512": "4LX3OTfSQYUYGASDYcpSfI8zXSb5ycGkCqRuaUK4emXAdq98ebOOBBTqwl9VCTZjZiBpiMaUPRO1GQg4FrybGA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.inmemory/1.0.0",
+      "path": "microsoft.entityframeworkcore.inmemory/6.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net451/Microsoft.EntityFrameworkCore.InMemory.dll",
-        "lib/net451/Microsoft.EntityFrameworkCore.InMemory.xml",
-        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.InMemory.dll",
-        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.InMemory.xml",
-        "microsoft.entityframeworkcore.inmemory.1.0.0.nupkg.sha512",
+        "Icon.png",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.6.0.3.nupkg.sha512",
         "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
@@ -939,7 +938,7 @@
     "net6.0": [
       "Microsoft.AspNetCore.Mvc.Abstractions >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 6.0.3",
-      "Microsoft.EntityFrameworkCore.InMemory >= 1.0.0",
+      "Microsoft.EntityFrameworkCore.InMemory >= 6.0.3",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -1000,7 +999,7 @@
           },
           "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[6.0.3, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

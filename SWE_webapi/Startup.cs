@@ -1,15 +1,14 @@
 ﻿using SWE_webapi.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
+using Microsoft.Extensions.Configuration;
+using System.Linq;
+
 
 
 namespace SWE_webapi
 {
 	public static class Startup
 	{
-		/*var options = new DbContextOptionsBuilder<LibraryContext>()
-        .UseInMemoryDatabase(databaseName: "InMemoryDB")
-        .Options;*/
 		public static WebApplication InitializeApp(string[] args)
         {
 			var builder = WebApplication.CreateBuilder(args);
@@ -21,16 +20,12 @@ namespace SWE_webapi
 
 		private static void ConfigureServices(WebApplicationBuilder builder)
         {
+			builder.Services.AddDbContext<LibraryContext>(opt => opt.UseInMemoryDatabase(builder.Configuration.GetConnectionString("MyDb")));
 			builder.Services.AddControllers();
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen();
 
-			//builder.Services.AddDbContext<LibraryContext>(opt => opt.UseInMemoryDatabase());
-;
-
-
-			//builder.Services.AddMvc(c => c.Conventions.Add();
 		}
 
 
@@ -42,14 +37,6 @@ namespace SWE_webapi
 				builder.AddDebug();
 			});
 
-			//loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-
-
-			//var context = app.Services.GetService<LibraryContext>();
-			//AddTestData(context);
-
-			//app.UseMvc();
-			// Configure the HTTP request pipeline.
 			if (app.Environment.IsDevelopment())
 			{
 				app.UseSwagger();
@@ -62,10 +49,15 @@ namespace SWE_webapi
 
 			app.MapControllers();
 
+			var scope = app.Services.CreateScope();
+
+			var context = scope.ServiceProvider.GetService<LibraryContext>();
+			AddTestData(context);
+
 			
 		}
 
-		/*private static void AddTestData(LibraryContext context)
+		public static void AddTestData(LibraryContext context)
 		{
 			var author = new Author
 			{
@@ -79,7 +71,7 @@ namespace SWE_webapi
 
 			context.Books.Add(book);
 			context.SaveChanges();
-		}*/
+		}
 	}
 }
 

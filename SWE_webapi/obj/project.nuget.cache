@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SoMIvknYzHBaonwG2Cy4twY1Mx7Wgcx0b2KYYq+CfHfv0I3bkn6rgWFnuiLUJcVQe423ZEcD3csFw6J4wtoxeA==",
+  "dgSpecHash": "jFHsvbd0S4lx1d2QuhjbvJYQ+gjTXNHyZva426meMpaqpqZbGOksOJfUSLUpkugo1FtI6ANhz3ma/Yo6hs+z5w==",
   "success": true,
   "projectFilePath": "C:\\Software-Engineering\\SWE_webapi\\SWE_webapi.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,7 @@
     "C:\\Users\\Jennifer\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
     "C:\\Users\\Jennifer\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.3\\microsoft.entityframeworkcore.abstractions.6.0.3.nupkg.sha512",
     "C:\\Users\\Jennifer\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.3\\microsoft.entityframeworkcore.analyzers.6.0.3.nupkg.sha512",
-    "C:\\Users\\Jennifer\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\1.0.0\\microsoft.entityframeworkcore.inmemory.1.0.0.nupkg.sha512",
+    "C:\\Users\\Jennifer\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\6.0.3\\microsoft.entityframeworkcore.inmemory.6.0.3.nupkg.sha512",
     "C:\\Users\\Jennifer\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Jennifer\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Jennifer\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",

@@ -9,13 +9,20 @@ namespace PrototypeApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class UsersController : Controller
-    {
+public class UsersController : ControllerBase
+{
     private readonly LibraryContext _context;
 
     public UsersController(LibraryContext context)
     {
         _context = context;
+    }
+
+    [HttpGet]
+    //Gebruikt om te kijken of de in memory db werkt
+    public List<Book> GetBooksTest()
+    {
+        return _context.Books.ToList();
     }
 
     [HttpGet(Name = "GetBooks")]
