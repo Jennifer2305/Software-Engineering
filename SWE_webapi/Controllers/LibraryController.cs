@@ -18,14 +18,31 @@ public class UsersController : ControllerBase
         _context = context;
     }
 
-    [HttpGet]
+    [HttpGet("{id}")]
     //Gebruikt om te kijken of de in memory db werkt
-    public List<Book> GetBooksTest()
+    public Book GetBookById(int id)
+    {
+        return _context.Books.SingleOrDefault(e => e.Id == id);
+    }
+
+    [HttpPost("NewBook")]
+
+    public IActionResult AddBook(Book book)
+    {
+        _context.Books.Add(book);
+        _context.SaveChanges();
+        return Created("api/books/" + book.Id, book);
+
+    }
+
+    [HttpGet("AllBooks")]
+    //Gebruikt om te kijken of de in memory db werkt
+    public List<Book> GetBooks()
     {
         return _context.Books.ToList();
     }
 
-    [HttpGet(Name = "GetBooks")]
+    [HttpGet("GetBooks")]
     public async Task<IActionResult> Get()
     {
         var users = await _context.Authors

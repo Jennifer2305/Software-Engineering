@@ -66,7 +66,7 @@ namespace SWE_webapi
 			var book = new Book
 			{
 				Title = "Fantasia",
-				Author = author
+				AuthorId = 1
 			};
 
 			context.Books.Add(book);
