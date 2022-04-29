@@ -23,6 +23,7 @@ public class UsersController : ControllerBase
     public Book GetBookById(int id)
     {
         return _context.Books.SingleOrDefault(e => e.Id == id);
+        //return books.Select(books).Where(s=> s.Id == id);
     }
 
     [HttpPost("NewBook")]
@@ -40,6 +41,9 @@ public class UsersController : ControllerBase
     public List<Book> GetBooks()
     {
         return _context.Books.ToList();
+        //
+        //return books.Select();
+        //
     }
 
     [HttpGet("GetBooks")]
