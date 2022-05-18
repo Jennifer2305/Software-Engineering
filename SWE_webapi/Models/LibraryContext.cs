@@ -16,5 +16,27 @@ namespace SWE_webapi.Models
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
     }
+
+   
+
+
+
+    public class DBset<T>
+    {
+        List<T> entities;
+
+        public DBset<T> Select(List<T> list)
+        {
+
+            foreach (T listcomponent in list){
+                
+            }
+
+            
+            entities = new List<T>();
+            return null;
+
+        }
+    }
 }
 

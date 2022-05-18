@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SWE_webapi.Models;
@@ -22,8 +21,8 @@ public class UsersController : ControllerBase
     //Gebruikt om te kijken of de in memory db werkt
     public Book GetBookById(int id)
     {
-        return _context.Books.SingleOrDefault(e => e.Id == id);
-        //return books.Select(books).Where(s=> s.Id == id);
+        //return _context.Books.SingleOrDefault(e => e.Id == id);
+        return _context.Books.Select(s => new {s.Title});
     }
 
     [HttpPost("NewBook")]
