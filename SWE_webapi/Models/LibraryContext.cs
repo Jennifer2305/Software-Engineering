@@ -15,25 +15,41 @@ namespace SWE_webapi.Models
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
+
+
+
     }
 
-   
+
 
 
 
     public class DBset<T>
     {
-        List<T> entities;
+        DbContextOptions<LibraryContext> options = new DbContextOptionsBuilder<LibraryContext>().UseInMemoryDatabase(databaseName: "MyDb").Options;
 
-        public DBset<T> Select(List<T> list)
+
+
+        public DBset<T> Select(Func<T, List<T>> e)
+        {
+            using (var db = new LibraryContext(options))
+            {
+               
+ 
+            }
+            
+            return null;
+
+        }
+
+        public DBset<T> Where(List<T> list)
         {
 
-            foreach (T listcomponent in list){
-                
+            foreach (T listcomponent in list)
+            {
             }
 
-            
-            entities = new List<T>();
+
             return null;
 
         }

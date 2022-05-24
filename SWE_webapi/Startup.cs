@@ -61,11 +61,13 @@ namespace SWE_webapi
 		{
 			var author = new Author
 			{
-				Name = "Geronimo Stilton",
+				Name = "Geronimo",
+				Surname = "Stilton"
 			};
 			var book = new Book
 			{
 				Title = "Fantasia",
+				Release = "10 april 2010",
 				AuthorId = 1
 			};
 
