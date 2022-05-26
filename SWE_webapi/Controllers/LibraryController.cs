@@ -21,6 +21,7 @@ public class UsersController : ControllerBase
     //Gebruikt om te kijken of de in memory db werkt
     public Book GetBookById(int id)
     {
+        var test = new DBset<Book>();
         return _context.Books.SingleOrDefault(e => e.Id == id);
         //return _context.Books.Select(s => new {s.Title});
     }
