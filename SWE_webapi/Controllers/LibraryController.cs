@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SWE_webapi.Models;
+using System.Linq;
 
 
 namespace PrototypeApi.Controllers;
@@ -21,7 +22,8 @@ public class UsersController : ControllerBase
     //Gebruikt om te kijken of de in memory db werkt
     public Book GetBookById(int id)
     {
-        var test = new DBset<Book>();
+        DBset<Book> test = new DBset<Book>();
+        test.Select(s => new { s.Title, s.Release });
         return _context.Books.SingleOrDefault(e => e.Id == id);
         //return _context.Books.Select(s => new {s.Title});
     }
@@ -40,6 +42,7 @@ public class UsersController : ControllerBase
     //Gebruikt om te kijken of de in memory db werkt
     public List<Book> GetBooks()
     {
+
         return _context.Books.ToList();
         //
         //return books.Select();
