@@ -22,7 +22,7 @@ public class UsersController : ControllerBase
     //Gebruikt om te kijken of de in memory db werkt
     public Book GetBookById(int id)
     {
-        DBset<Book> test = new DBset<Book>();
+        DBset<Book> test = new DBset<Book>((new Book()));
         test.Select(s => new { s.Title, s.Release });
         return _context.Books.SingleOrDefault(e => e.Id == id);
         //return _context.Books.Select(s => new {s.Title});

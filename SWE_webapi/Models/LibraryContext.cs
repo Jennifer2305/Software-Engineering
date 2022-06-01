@@ -25,19 +25,34 @@ namespace SWE_webapi.Models
     public class DBset<T>
     {
         DbContextOptions<LibraryContext> options = new DbContextOptionsBuilder<LibraryContext>().UseInMemoryDatabase(databaseName: "MyDb").Options;
-        public List<int> entities;
-        
+        public List<T> entities;
+        public T Type;
 
+        public DBset(T type){
+            this.Type = type;
+        }
 
         //s => new { s.Name, s.Surname }
 
         public DBset<T> Select<TResult>(Func<T, TResult> fun)
         {
+            var test = fun(Type);
             
+            var typing = Type.GetType();
+
+            //Book testje = (Book)Convert.ChangeType(Type, typeof(Book));
+
+            
+
+
+
             using (var db = new LibraryContext(options))
             {
-               
- 
+                /*if (itemType.Equals(Book))
+                {
+
+                }
+                var projected_movies = from m in db.Books select m;*/
             }
             
             
