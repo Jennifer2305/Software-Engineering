@@ -27,6 +27,10 @@ namespace SWE_webapi.Models
         DbContextOptions<LibraryContext> options = new DbContextOptionsBuilder<LibraryContext>().UseInMemoryDatabase(databaseName: "MyDb").Options;
         public List<T> entities;
         public T Type;
+        Func<Book, T> convertBook;
+        Func<Author, T> convertAuthor;
+
+        public List<Book> testList;
 
         public DBset(T type){
             this.Type = type;
@@ -34,29 +38,57 @@ namespace SWE_webapi.Models
 
         //s => new { s.Name, s.Surname }
 
-        public DBset<T> Select<TResult>(Func<T, TResult> fun)
+        public List<Book> Select<TResult>(Func<T, TResult> fun)
         {
-            var test = fun(Type);
-            
-            var typing = Type.GetType();
+            //var test = fun(Type);
 
-            //Book testje = (Book)Convert.ChangeType(Type, typeof(Book));
-
-            
-
-
+            Book testje = Type as Book;
 
             using (var db = new LibraryContext(options))
-            {
-                /*if (itemType.Equals(Book))
+            {   
+                if (testje != null)
                 {
-
+                    var dbResult = from m in db.Books select m;
+                    foreach (var entity in dbResult)
+                    {
+                        entities.Add(convertBook(entity));
+                    }
+                    return testList;
                 }
-                var projected_movies = from m in db.Books select m;*/
+                else
+                {
+                    var dbResult = from m in db.Books select m;
+                    foreach (var entity in dbResult)
+                    {
+                        entities.Add(convertBook(entity));
+                    }
+                    return testList;
+                }
+                
+
+
+                /*if (testje != null)
+                {
+                    var resultDB = from m in db.Books select m;
+                    foreach (var entity in resultDB)
+                    {
+                        testList.Add(entity);
+                  
+                    }
+                    return testList;
+                }
+                else
+                {
+                    var resultDB = from m in db.Authors select m;
+                    foreach (var entity in resultDB)
+                    {
+                        entities.Add(convertAuthor(entity));
+                    }
+                }*/
             }
             
             
-            return null;
+            //return null;
 
         }
 

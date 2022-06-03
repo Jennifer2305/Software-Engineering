@@ -24,6 +24,7 @@ public class UsersController : ControllerBase
     {
         DBset<Book> test = new DBset<Book>((new Book()));
         test.Select(s => new { s.Title, s.Release });
+        
         return _context.Books.SingleOrDefault(e => e.Id == id);
         //return _context.Books.Select(s => new {s.Title});
     }
@@ -42,8 +43,10 @@ public class UsersController : ControllerBase
     //Gebruikt om te kijken of de in memory db werkt
     public List<Book> GetBooks()
     {
-
-        return _context.Books.ToList();
+        DBset<Book> test = new DBset<Book>((new Book()));
+        var response = test.Select(s => new { s.Title, s.Release });
+        return response;
+        //return _context.Books.ToList();
         //
         //return books.Select();
         //
@@ -61,6 +64,9 @@ public class UsersController : ControllerBase
             Name = u.Name,
             posts = u.Books.Select(p => p.Title)
         });
+
+        /*DBset<Book> test = new DBset<Book>((new Book()));
+        var response = test.Select(s => new { s.Title, s.Release });*/
 
         return Ok(response);
     }
